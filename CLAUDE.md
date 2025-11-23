@@ -199,10 +199,22 @@ Connect IQ uses a View/Delegate architecture:
 3. Configure target devices in `manifest.xml`
 
 ### Building
+
+#### Using VS Code Connect IQ Extension (Recommended)
+Build through the VS Code Connect IQ extension GUI
+
+#### Using Command Line
 ```bash
-# Build is typically done through VS Code Connect IQ extension
-# Or using command line tools from the SDK
+java -Xms1g -Dfile.encoding=UTF-8 -Dapple.awt.UIElement=true -jar c:\Users\jean-baptiste.bayle\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.2.3-2025-08-11-cac5b3b21\bin\monkeybrains.jar -o bin\ReactivWatch.prg -f c:\Users\jean-baptiste.bayle\Desktop\programmation\Garmin\ReactivWatch\monkey.jungle -y
 ```
+
+**Command breakdown:**
+- `-Xms1g` - Allocate 1GB memory for the compiler
+- `-Dfile.encoding=UTF-8` - Use UTF-8 encoding
+- `-jar monkeybrains.jar` - The Connect IQ compiler
+- `-o bin\ReactivWatch.prg` - Output compiled app to bin directory
+- `-f monkey.jungle` - Use monkey.jungle as build configuration
+- `-y` - Release build (use `-d` for debug build)
 
 ### Testing
 - Use Connect IQ Simulator for testing on virtual devices
